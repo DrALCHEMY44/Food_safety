@@ -4,17 +4,17 @@ import { useState, useEffect, useRef } from "react";
 
 /* ─── palette ────────────────────────────────────────────── */
 const C = {
-  bg: "#ffffff",
-  surface: "#f6f5f1",
-  surface2: "#181d2a",
-  glass: "#111520",
-  glassBorder: "rgba(255,255,255,0.09)",
-  accent: "#c9a96e",
-  accentGlow: "rgba(201,169,110,0.18)",
-  accentDim: "rgba(201,169,110,0.1)",
-  cream: "#ede9df",
-  muted: "#7a8099",
-  text: "#e4e0d6",
+  bg: "#0B0C10",
+  surface: "#11141A",
+  surface2: "#191D26",
+  glass: "#151821",
+  glassBorder: "rgba(255,255,255,0.07)",
+  accent: "#E2C382",
+  accentGlow: "rgba(226,195,130,0.18)",
+  accentDim: "rgba(226,195,130,0.1)",
+  cream: "#F4F0E6",
+  muted: "#8A93A6",
+  text: "#DFE3EE",
 };
 
 /* ─── global animation styles injected once ──────────────── */
@@ -599,15 +599,15 @@ function Hero() {
   );
 }
 
-/* ─── free food-safety assessment ───────────────────────── */
+/* ─── food-safety assessment ───────────────────────── */
 const assessmentTypes = ["Bakery", "Juice production", "Dairy products", "Snacks"];
 
-function FreeAssessment() {
+function Assessment() {
   const [business, setBusiness] = useState(assessmentTypes[0]);
-  const text = encodeURIComponent(`Hello Alphonse, I would like to book a free food safety assessment for my ${business.toLowerCase()} business.`);
+  const text = encodeURIComponent(`Hello Alphonse, I would like to book a food safety assessment for my ${business.toLowerCase()} business.`);
   return <section id="assessment" className="light-section" style={{ padding: "100px 2rem", background: C.surface }}>
     <div className="two-col" style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-      <Reveal><Tag>// free assessment</Tag><h2 className="font-display" style={{ fontSize: "clamp(2rem,4vw,3.2rem)", lineHeight: 1.12, color: C.cream, margin: "1rem 0" }}>Find Food-Safety Gaps Before They Cost You</h2><p style={{ color: C.muted, lineHeight: 1.8 }}>A free 30-minute review for small food businesses in Cameroon, followed by a concise self-check report highlighting 3–5 practical improvement areas.</p><div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginTop: "1.5rem" }}>{["100% free", "No obligation", "Confidential"].map(x => <SkillPill key={x} label={x} />)}</div></Reveal>
+      <Reveal><Tag>// assessment</Tag><h2 className="font-display" style={{ fontSize: "clamp(2rem,4vw,3.2rem)", lineHeight: 1.12, color: C.cream, margin: "1rem 0" }}>Find Food-Safety Gaps Before They Cost You</h2><p style={{ color: C.muted, lineHeight: 1.8 }}>A 30-minute review for small food businesses in Cameroon, followed by a concise self-check report highlighting 3–5 practical improvement areas.</p><div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginTop: "1.5rem" }}>{["Comprehensive", "No obligation", "Confidential"].map(x => <SkillPill key={x} label={x} />)}</div></Reveal>
       <Reveal delay={100}><div className="assessment-card"><p className="section-tag">Choose your business</p><div className="assessment-options">{assessmentTypes.map(type => <button type="button" key={type} className={business === type ? "active" : ""} onClick={() => setBusiness(type)}>{type}</button>)}</div><div className="assessment-report"><small>What you get</small><strong>3–5</strong><span>key improvement areas and practical recommendations</span></div><a className="btn-primary" href={`https://wa.me/237653367464?text=${text}`} target="_blank" rel="noopener noreferrer">Book on WhatsApp →</a></div></Reveal>
     </div>
   </section>;
@@ -1268,7 +1268,7 @@ export default function App() {
       <GlobalStyles />
       <Nav />
       <Hero />
-      <FreeAssessment />
+      <Assessment />
       <Services />
       <Projects />
       <Expertise />

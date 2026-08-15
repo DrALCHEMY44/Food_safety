@@ -11,27 +11,13 @@ html::-webkit-scrollbar { display: none; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #18211b;
+  background-color: #0B0C10;
+  color: #DFE3EE;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-.light-section .section-heading h2 { color:#18211b !important; }
-.light-section .section-heading p { color:#626b64 !important; }
-#assessment > div > div:first-child h2 { color:#18211b !important; }
-#assessment > div > div:first-child > div > p { color:#626b64 !important; }
-#about .two-col > div:first-child p { color:#626b64 !important; }
-.cta-light h2 { color:#18211b !important; }
-.cta-light p { color:#626b64 !important; }
-#contact .two-col > div:first-child a,#contact .two-col > div:first-child span { color:#18211b !important; }
-.light-footer p { color:#626b64 !important; }
-
-/* Light-canvas contrast and responsive system */
-#hero h1 { color:#18211b !important; }
-#hero .btn-outline { color:#18211b; border-color:rgba(24,33,27,.28); }
-#hero .btn-outline:hover { color:#18211b; background:rgba(201,169,110,.12); }
-#hero > div:last-child { color:#18211b; }
+/* Light-canvas overrides removed for dark theme */
 .nav-desktop .btn-primary { white-space:nowrap; }
 
 @media (max-width: 1100px) {
